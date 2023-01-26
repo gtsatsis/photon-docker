@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  photon:
+    build: .
+    ports:
+      - "5056:5056/udp"
+      - "5057:5057/udp"
+      - "5058:5058/udp"
+    environment:
+      EXTERNAL_IP: 10.0.0.1
+    volumes:
+     - "${PWD}/photon.license:/home/wine/photon/deploy/bin_Win64/photon.license"
